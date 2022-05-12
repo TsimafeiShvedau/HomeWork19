@@ -58,7 +58,6 @@ namespace HomeWork19
             }
         }
 
-
         public int IndexOf(T item) 
         {
             for (int i = 0; i < Count; i++)
@@ -144,20 +143,4 @@ namespace HomeWork19
         }
 
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
-
