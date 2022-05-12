@@ -118,12 +118,6 @@ namespace HomeWork19
             else throw new IndexOutOfRangeException("Неверный индекс");
         }
 
-        public T[] Get_list()
-        {
-            return _list;
-        }
-
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return _list.GetEnumerator();
@@ -131,7 +125,10 @@ namespace HomeWork19
 
         public IEnumerator<T> GetEnumerator()
         {
-            return new MyListEnumerator(Get_list());
+            for (int i = 0; i < Count; i++)
+            {
+                yield return _list[i];
+            }
         }
 
         public MyList ()
