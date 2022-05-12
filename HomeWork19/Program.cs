@@ -28,7 +28,7 @@ namespace HomeWork19
 
             lst.Insert(0, 10);
 
-
+            
 
             lst.PrintListToConsole();
             Console.WriteLine("_____________________________________-");
@@ -39,8 +39,9 @@ namespace HomeWork19
             {
                 Console.WriteLine(elem);
             }
+            Console.WriteLine("_____________________________________-");
+            Console.WriteLine($"({lst})");
 
-            
             Console.ReadKey();
         }
     }

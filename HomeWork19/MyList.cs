@@ -80,6 +80,18 @@ namespace HomeWork19
                 Console.WriteLine(_list[i]);
             }
         }
+
+        public override string ToString()
+        {
+            string result = "";
+            for (int i = 0; i < Count; i++) 
+            { 
+                result = String.Concat(result, _list[i].ToString(), ", ");
+            }
+            result = result.TrimEnd(new char[] {' ', ','});
+            return result;
+        }
+
         public bool Remove(T item)
         {
             if(_list.Contains(item))
