@@ -22,7 +22,6 @@ namespace HomeWork19
             somelist.Insert(2, 55);
 
 
-            Console.WriteLine("-------------------------------");
             Console.WriteLine($"ToString: {somelist}");
             Console.WriteLine($"Count: {somelist.Count}");
             Console.WriteLine($"Capacity: {somelist.Capacity}");
