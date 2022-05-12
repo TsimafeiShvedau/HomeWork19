@@ -11,36 +11,21 @@ namespace HomeWork19
     {
         static void Main(string[] args)
         {
-            MyList<int> lst = new MyList<int>();
-
-            lst.Add(1);
-
-            lst.Add(2);
-
-
-            lst.Add(3);
-            lst.Add(4);
-            lst.Add(5);
-            lst.Add(6);
-            lst.Add(7);
-            lst.Add(8);
-            lst.Add(9);
-
-            lst.Insert(0, 10);
-
+            MyList<int> somelist = new MyList<int>();
             
+            somelist.Add(1);
+            somelist.Add(2);
+            somelist.Add(3);
+            somelist.Add(4);
+            somelist.Add(5);
+            somelist.Add(6);
+            somelist.Insert(2, 55);
 
-            lst.PrintListToConsole();
-            Console.WriteLine("_____________________________________-");
-            Console.WriteLine(lst.Capacity);
-            Console.WriteLine("_____________________________________-");
 
-            foreach(var elem in lst)
-            {
-                Console.WriteLine(elem);
-            }
-            Console.WriteLine("_____________________________________-");
-            Console.WriteLine($"({lst})");
+            Console.WriteLine("-------------------------------");
+            Console.WriteLine($"ToString: {somelist}");
+            Console.WriteLine($"Count: {somelist.Count}");
+            Console.WriteLine($"Capacity: {somelist.Capacity}");
 
             Console.ReadKey();
         }

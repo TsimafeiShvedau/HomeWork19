@@ -61,7 +61,7 @@ namespace HomeWork19
         }
         public void Insert(int index, T item)
         {
-            if (index < Count && index >= 0)
+            if (index <= Count && index >= 0)
             {
                 Count++;
                 TryToIncreaseInternalArray();
