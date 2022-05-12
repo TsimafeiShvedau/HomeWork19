@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace HomeWork19
 {
-    internal class MyList<T> : IList<T> where T : IComparable<T>
+    internal class MyList<T> : IList<T> where T : IComparable<T>     
     {
-        
         private T[] _list = new T[1];
         public int Count { get; private set; }
         public int Capacity => _list.Length;
@@ -18,7 +17,6 @@ namespace HomeWork19
             get { return _list[index]; }
             set => _list[index] = value;
         }
-
         private void TryToIncreaseInternalArray()
         {
             if (Count == Capacity)
@@ -29,25 +27,21 @@ namespace HomeWork19
             }
         }
         public bool IsReadOnly { get; }
-
         public void Add(T elem)
         {
             TryToIncreaseInternalArray();
             _list[Count] = elem;
             Count++;
         }
-
         public void Clear()
         {
             _list = new T[1];
             Count = 0;
         }
-
         public bool Contains(T item)
         {
             return _list.Contains(item);
         }
-
         public void CopyTo(T[] array, int arrayIndex)
         {
             int tmp = 0;
@@ -57,7 +51,6 @@ namespace HomeWork19
                 tmp++;
             }
         }
-
         public int IndexOf(T item) 
         {
             for (int i = 0; i < Count; i++)
@@ -66,7 +59,6 @@ namespace HomeWork19
             }
             return -1;
         }
-
         public void Insert(int index, T item)
         {
             if (index < Count && index >= 0)
@@ -81,7 +73,6 @@ namespace HomeWork19
             }
             else throw new IndexOutOfRangeException("Неверный индекс нового элемента");
         }
-
         public void PrintListToConsole()
         {
             for (int i = 0; i < Count; i++)
@@ -89,7 +80,6 @@ namespace HomeWork19
                 Console.WriteLine(_list[i]);
             }
         }
-
         public bool Remove(T item)
         {
             if(_list.Contains(item))
@@ -103,7 +93,6 @@ namespace HomeWork19
             };
             return false;
         }
-
         public void RemoveAt(int index)
         {
             if (index < Count && index >= 0)
@@ -116,12 +105,10 @@ namespace HomeWork19
             }
             else throw new IndexOutOfRangeException("Неверный индекс");
         }
-
         IEnumerator IEnumerable.GetEnumerator()
         {
             return _list.GetEnumerator();
         }
-
         public IEnumerator<T> GetEnumerator()
         {
             for (int i = 0; i < Count; i++)
@@ -129,18 +116,15 @@ namespace HomeWork19
                 yield return _list[i];
             }
         }
-
         public MyList ()
         {
             _list = new T[1];
             Count = 0;
         }
-
         public MyList (int count)
         {
             _list = new T[count];
             Count = 0;
         }
-
     }
 }
